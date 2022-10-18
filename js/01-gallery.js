@@ -1,5 +1,8 @@
-import { galleryItems } from './gallery-items.js';
-// import * as basicLightbox from './basiclightbox.js';
+// import { galleryItems } from './gallery-items.js';
+import * as basicLightbox from 'basiclightbox';
+const moment = require('moment');
+
+// const basicLightbox = require('basiclightbox');
 // Change code below this line
 const galleryDiv = document.querySelector('.gallery');
 console.log(galleryItems);
@@ -7,6 +10,7 @@ console.log(galleryItems);
 renderingGallery(galleryItems);
 
 function renderingGallery(array) {
+  // array.preventDefault();
   const markup = array
     .map(
       (image) =>

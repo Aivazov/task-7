@@ -24,6 +24,9 @@ refs.buttonsContainer.addEventListener('click', (event) => {
     activeElement.classList.remove('is-active');
   }
 
+  // the condition above is the same that modern expression below
+  // activeElement?.classList.remove('is-active');
+
   if (activeElement === currentElement) {
     return renderingBooksInfo(booksInfo);
     // console.log(activeElement === currentElement);
