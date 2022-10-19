@@ -38,7 +38,19 @@
   text-decoration: none;
   height: 100%;
 }
-
+  
 .gallery__link:hover {
-  cursor: zoom-in;
+  cursor: zoom-in; 
+}
+
+li img {
+  transform: translateX(-50%); 
+  opacity: 0;
+  transition: all 500ms linear 250ms;
+  object-fit: cover;
+} 
+
+li img.img-animation {
+  transform: translateX(0);
+  opacity: 1;
 }

@@ -3,11 +3,25 @@ import { arrayOfNames } from './names-array.js';
 const refs = {
   input: document.querySelector('input[data-input]'),
   list: document.querySelector('ol[data-list]'),
+  imageLoading: document.querySelectorAll('img[loading="lazy"]'),
 };
 
-renderingNames(arrayOfNames);
+const image2 = document.querySelectorAll('img[loading="lazy"]');
 
-refs.input.addEventListener('input', _.throttle(filteringNames, 300));
+// renderingNames(arrayOfNames);
+// console.log(refs.imageLoading)
+
+// image2.forEach((image) => {
+//   image.addEventListener('load', onImageLoaded, {once: true});
+// });
+
+// function onImageLoaded(event) {
+//   console.log(event.target);
+//   console.log('Events was loaded');
+//   event.target.classList.add('img-animation');
+// };
+
+// refs.input.addEventListener('input', _.throttle(filteringNames, 300));
 
 function filteringNames(event) {
   const currentValue = event.target.value.toLowerCase().trim();

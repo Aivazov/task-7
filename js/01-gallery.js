@@ -1,6 +1,6 @@
-// import { galleryItems } from './gallery-items.js';
-import * as basicLightbox from 'basiclightbox';
-const moment = require('moment');
+import { galleryItems } from './gallery-items.js';
+// import * as basicLightbox from 'basiclightbox';
+// const moment = require('moment');
 
 // const basicLightbox = require('basiclightbox');
 // Change code below this line
