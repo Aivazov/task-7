@@ -1,13 +1,30 @@
 import { galleryItems } from './gallery-items.js';
-// import * as basicLightbox from 'basiclightbox';
-// const moment = require('moment');
 
-// const basicLightbox = require('basiclightbox');
-// Change code below this line
 const galleryDiv = document.querySelector('.gallery');
-console.log(galleryItems);
-
+// console.log(galleryItems);
 renderingGallery(galleryItems);
+console.log(galleryItems);
+console.log(galleryItems[0].original);
+
+document.querySelector('button.image').onclick = () => {
+  basicLightbox
+    .create(
+      `
+		<img width="1400" height="900" src="${galleryItems[2].original}">
+	`
+    )
+    .show();
+};
+
+
+document.querySelector('.gallery__link').onclick = () => {
+  basicLightbox
+    .create(
+      `<a class="gallery__link" href="${galleryItems.original}"></a>
+	`
+    )
+    .show();
+};
 
 function renderingGallery(array) {
   // array.preventDefault();
@@ -15,11 +32,11 @@ function renderingGallery(array) {
     .map(
       (image) =>
         `<div class="gallery__item">
-      <a class="gallery__link" href="large-image.jpg">
+      <a class="gallery__link" href="${image.original}">
         <img
           class="gallery__image"
           src="${image.preview}"
-          data-source="large-image.jpg"
+          data-source="${image.original}"
           alt="${image.description}"
         />
       </a>
