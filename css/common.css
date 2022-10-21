@@ -8,10 +8,33 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background: rgb(52, 0, 56);
+  background: radial-gradient(
+    circle,
+    rgba(52, 0, 56, 1) 0%,
+    rgba(18, 1, 1, 1) 100%
+  );
   color: #212121;
   line-height: 1.5;
-} 
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  max-width: 620px;
+  color: rgb(200, 209, 218);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(200, 209, 218);
+}
+
+a:hover {
+  color: white;
+}
 
 input {
   padding: 8px;

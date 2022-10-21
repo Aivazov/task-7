@@ -4,10 +4,9 @@ import { galleryItems } from './gallery-items.js';
 // console.log(galleryItems);
 
 const galleryUl = document.querySelector('.gallery');
-renderingGallery(galleryItems);
+// renderingGallery(galleryItems);
 
 const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
 
 lazyImages.forEach((image) => {
   console.log(image);
@@ -15,17 +14,26 @@ lazyImages.forEach((image) => {
   image.addEventListener('load', onImageLoaded);
 });
 
+let gallery = new SimpleLightbox('.gallery a');
+
+galleryUl.addEventListener('click', onImageClick);
+
 function onImageClick(e) {
   e.preventDefault();
 
+  console.log(e.target);
   if (e.target.nodeName !== 'IMG') {
     return;
   }
 
-  let gallery = new SimpleLightbox('.gallery a');
-  gallery.on('show.simplelightbox', function () {
-    // do something…
+  gallery.on('show.simplelightbox', function (e) {
+    console.log('gallery.elements[0]', gallery.elements[0]);
   });
+
+  // gallery.on('show.simplelightbox', function () {
+  //   // SimpleLightbox.sourceAttr;
+  //   console.log('I am in gallery simplelightbox');
+  // });
 }
 
 function onImageLoaded(e) {
