@@ -48,6 +48,7 @@ function onImageClick(e) {
   });
 }
 
+//no uses at all
 function blockStandardBrowserAction(e) {
   e.preventDefault();
 }

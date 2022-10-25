@@ -7,13 +7,15 @@ const galleryUl = document.querySelector('.gallery');
 renderingGallery(galleryItems);
 
 const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
+let gallery = new SimpleLightbox('.gallery a');
 
 lazyImages.forEach((image) => {
   console.log(image);
 
   image.addEventListener('load', onImageLoaded);
 });
+
+galleryUl.addEventListener('click', onImageClick);
 
 function onImageClick(e) {
   e.preventDefault();
@@ -22,10 +24,7 @@ function onImageClick(e) {
     return;
   }
 
-  let gallery = new SimpleLightbox('.gallery a');
-  gallery.on('show.simplelightbox', function () {
-    // do something…
-  });
+  gallery.open();
 }
 
 function onImageLoaded(e) {
@@ -38,7 +37,7 @@ function renderingGallery(array) {
       (image) =>
         `
         <a class="gallery__item" href="${image.original}">
-          <img class="gallery__image" src="${image.preview}" alt="${image.description}" loading='lazy' />
+          <img class="gallery__image" src="${image.preview}" alt="${image.description}" title="${image.description}" loading='lazy' />
         </a>`
     )
     .join('');
