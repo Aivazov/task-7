@@ -4,14 +4,14 @@ export const galleryItems = [
       'https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=340',
     original:
       'https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    description: 'Hokkaido Flower',
+    description: 'Lamborghini Aventador',
   },
   {
     preview:
       'https://images.pexels.com/photos/2356071/pexels-photo-2356071.jpeg?auto=compress&cs=tinysrgb&w=340',
     original:
       'https://images.pexels.com/photos/2356071/pexels-photo-2356071.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    description: 'Container Haulage Freight',
+    description: 'Mountain Sight',
   },
   {
     preview:
@@ -25,14 +25,14 @@ export const galleryItems = [
       'https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&w=340',
     original:
       'https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&w=1600',
-    description: 'Flower Blooms',
+    description: 'Baloon to the Horizon',
   },
   {
     preview:
       'https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg?auto=compress&cs=tinysrgb&w=340',
     original:
       'https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    description: 'Alpine Mountains',
+    description: 'Irish Pasturates Horses',
   },
   {
     preview:
@@ -60,6 +60,6 @@ export const galleryItems = [
       'https://images.pexels.com/photos/785293/pexels-photo-785293.jpeg?auto=compress&cs=tinysrgb&w=340',
     original:
       'https://images.pexels.com/photos/785293/pexels-photo-785293.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    description: 'Lighthouse Coast Sea',
+    description: 'Flowers Blossom',
   },
 ];
