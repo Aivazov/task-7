@@ -23,6 +23,11 @@ function onImageClick(e) {
   }
 
   gallery.open();
+  gallery.on('shown.simplelightbox', function () {
+    console.log('was shown');
+    console.log(e.target);
+
+  });
 }
 
 function onImageLoaded(e) {

@@ -7,54 +7,35 @@ const galleryUl = document.querySelector('.gallery');
 renderingGallery(galleryItems);
 
 const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
 let gallery = new SimpleLightbox('.gallery a');
-console.log(gallery);
 
-lazyImages.forEach((image) => {
-  // console.log(image);
+console.log('gallery.elements', gallery.elements);
 
-  image.addEventListener('load', onImageLoaded);
-});
+// lazyImages.forEach((image) => {
+//   // console.log(image);
 
-gallery.elements.forEach((el) => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log(el);
+//   image.addEventListener('load', onImageLoaded);
+// });
 
-    if (e.target.nodeName !== 'IMG') {
-      return;
-    }
-
-    gallery.on('shown.simplelightbox');
-    gallery.open();
-
-    // const galleryImage = document.querySelector('.gallery > a');
-  });
-});
+galleryUl.addEventListener('click', onImageClick);
 
 function onImageClick(e) {
   e.preventDefault();
-
+  console.log(e.target.dataset.source);
   if (e.target.nodeName !== 'IMG') {
     return;
   }
 
-  const galleryImage = document.querySelector('.gallery > a');
-  // gallery.open();
-  gallery.destroy();
+  gallery.open();
 
-  // galleryImage.addEventListener('click', () => {
+  gallery.on('shown.simplelightbox', function () {
+    console.log('hi');
+  });
+
+  // galleryDiv.addEventListener('keydown', (e) => {
+  //   if (e.code === 'Escape') instance.close();
   // });
-
-  //   const instance = basicLightbox.create(`
-  //     <img src="${e.target.dataset.source}" width="800" height="600">
-  // `);
-
-  // e.target.src.open();
-}
-
-function onImageLoaded(e) {
-  // console.log(e.target);
 }
 
 function renderingGallery(array) {
@@ -67,5 +48,65 @@ function renderingGallery(array) {
         </a>`
     )
     .join('');
+
   galleryUl.insertAdjacentHTML('beforeend', markup);
+}
+
+// gallery.open(
+//   'show.simplelightbox',
+//   gallery.elements.forEach((el) => {
+//     el.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       console.log('el', el);
+
+//       if (e.target.nodeName !== 'IMG') {
+//         return;
+//       }
+
+//       let gallery = new SimpleLightbox('.gallery a');
+//       gallery.open();
+
+//       // const galleryImage = document.querySelector('.gallery > a');
+//     });
+//   })
+// );
+
+// gallery.elements.forEach((el) => {
+//   el.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     console.log('el', el);
+
+//     if (e.target.nodeName !== 'IMG') {
+//       return;
+//     }
+//     gallery.on('shown.simplelightbox');
+//     gallery.open();
+
+//     // const galleryImage = document.querySelector('.gallery > a');
+//   });
+// });
+
+// function onImageClick(e) {
+//   e.preventDefault();
+
+//   if (e.target.nodeName !== 'IMG') {
+//     return;
+//   }
+
+//   const galleryImage = document.querySelector('.gallery > a');
+//   // gallery.open();
+//   gallery.destroy();
+
+//   // galleryImage.addEventListener('click', () => {
+//   // });
+
+//   //   const instance = basicLightbox.create(`
+//   //     <img src="${e.target.dataset.source}" width="800" height="600">
+//   // `);
+
+//   // e.target.src.open();
+// }
+
+function onImageLoaded(e) {
+  // console.log(e.target);
 }
