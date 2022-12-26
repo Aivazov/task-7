@@ -33,31 +33,19 @@ console.log(galleryItems);
 //
 //
 //
-// const galleryMarkup = galleryItems
-//   .map(({ original, preview, description }) => {
-//     return `
-//         <a class="gallery__item" href="${original}">
-//           <img class="gallery__image" src="${preview}" data-source="${original}"3 alt="${description}" title="${description}" loading='lazy' />
-//         </a>`;
-//   })
-//   .join('');
-
 const galleryMarkup = galleryItems
   .map(({ original, preview, description }) => {
-    return `<li>
-        <a class="gallery__item" href=${original}>
-            <img
-                class="gallery__image"
-                src=${preview}
-                alt=${description}
-            />
-        </a>
-    </li>`;
+    return `
+        <a class="gallery__item" href="${original}">
+          <img class="gallery__image" src="${preview}" data-source="${original}"3 alt="${description}" title="${description}" loading='lazy' />
+        </a>`;
   })
   .join('');
 
 const galleryUl = document.querySelector('.gallery');
 galleryUl.insertAdjacentHTML('afterbegin', galleryMarkup);
+
+
 
 let galleryModal = new SimpleLightbox('.gallery__item');
 
