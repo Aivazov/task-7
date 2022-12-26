@@ -12,14 +12,14 @@ galleryDiv.addEventListener('click', onImageClick);
 function renderingGallery(array) {
   const markup = array
     .map(
-      (image) =>
+      ({ original, preview, description }) =>
         `<div class="gallery__item">
-          <a class="gallery__link" href="${image.original}">
+          <a class="gallery__link" href="${original}">
             <img
               class="gallery__image"
-              src="${image.preview}"
-              data-source="${image.original}"
-              alt="${image.description}"
+              src="${preview}"
+              data-source="${original}"
+              alt="${description}"
             />
           </a>
         </div>`
@@ -32,7 +32,7 @@ function renderingGallery(array) {
 //click on image and show modal
 function onImageClick(e) {
   e.preventDefault();
-  console.log(e.target.dataset.source);
+  // console.log(e.target.dataset.source);
   if (e.target.nodeName !== 'IMG') {
     return;
   }
@@ -46,9 +46,4 @@ function onImageClick(e) {
   galleryDiv.addEventListener('keydown', (e) => {
     if (e.code === 'Escape') instance.close();
   });
-}
-
-//no uses at all
-function blockStandardBrowserAction(e) {
-  e.preventDefault();
 }

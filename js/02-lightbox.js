@@ -6,19 +6,20 @@ import { galleryItems } from './gallery-items.js';
 const galleryUl = document.querySelector('.gallery');
 renderingGallery(galleryItems);
 
-const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+const lazyImages = document.querySelectorAll("img[loading='lazy']");
 
-let gallery = new SimpleLightbox('.gallery a');
+let gallery = new SimpleLightbox('.gallery__item');
+gallery.on('show.simplelightbox');
 
 console.log('gallery.elements', gallery.elements);
 
 // lazyImages.forEach((image) => {
 //   // console.log(image);
 
-//   image.addEventListener('load', onImageLoaded);
+//   image.addEventListener("load", onImageLoaded);
 // });
 
-galleryUl.addEventListener('click', onImageClick);
+// galleryUl.addEventListener("click", onImageClick);
 
 function onImageClick(e) {
   e.preventDefault();
@@ -29,9 +30,9 @@ function onImageClick(e) {
 
   gallery.open();
 
-  gallery.on('shown.simplelightbox', function () {
-    console.log('hi');
-  });
+  // gallery.on("shown.simplelightbox", function () {
+  //   console.log('hi');
+  // });
 
   // galleryDiv.addEventListener('keydown', (e) => {
   //   if (e.code === 'Escape') instance.close();
@@ -49,7 +50,7 @@ function renderingGallery(array) {
     )
     .join('');
 
-  galleryUl.insertAdjacentHTML('beforeend', markup);
+  galleryUl.insertAdjacentHTML('afterbegin', markup);
 }
 
 // gallery.open(
